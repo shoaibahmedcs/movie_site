@@ -108,19 +108,16 @@
   color: #fff;
 }
 
-/* Description: wrapping + clamp to max lines */
+/* Description: wrapping + full text display */
 .movie-description {
   color: #e7e7e7;
   font-size: 15px;
   line-height: 1.5;
   margin: 0;
-  /* Clamp to 3 lines with ellipsis */
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-break: break-word;
+  word-wrap: break-word;
+  width: 30vw;
+  white-space: normal;
+  text-align: left;
 }
 
 /* Buttons row */

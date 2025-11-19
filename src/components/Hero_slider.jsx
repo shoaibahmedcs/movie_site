@@ -9,6 +9,32 @@ export default function Hero_slider() {
     function randomIndex(min = 0, max = movies.length - 1) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
+
+    function formatDate(dateString) {
+        if (!dateString) return '';
+        
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
+                        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        
+        // Handle format: YYYY-MM-DD or DD/MM/YYYY
+        let day, month, year;
+        
+        if (dateString.includes('/')) {
+            // Format: DD/MM/YYYY
+            const parts = dateString.split('/');
+            day = parts[0];
+            month = parseInt(parts[1]) - 1;
+            year = parts[2];
+        } else {
+            // Format: YYYY-MM-DD
+            const parts = dateString.split('-');
+            year = parts[0];
+            month = parseInt(parts[1]) - 1;
+            day = parts[2];
+        }
+        
+        return `${day} ${months[month]}, ${year}`;
+    }
     const images = [
     {
         original: "https://image.tmdb.org/t/p/original" + movies[41].backdrop_path,
@@ -124,7 +150,7 @@ function renderMovieItem(item) {
                 <h2 className="movie-title">{item.title}</h2>
 
                 <div className="movie-meta">
-                    <span>{item.releaseDate}</span>
+                    <span>{formatDate(item.releaseDate)}</span>
                     <span>{item.rating} ⭐</span>
                 </div>
 
