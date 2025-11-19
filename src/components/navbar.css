@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif; 
+}
+.navbar {
+  display: flex;
+  justify-content: center; 
+  align-items: center;          
+  padding: 1rem 2rem;           
+  background-color: #141414;    
+  border-bottom: 1px solid #333; 
+}
+
+/* --- Left & Right Sections (the <ul> elements) --- */
+.navbar-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  list-style: none; 
+  padding: 0 14px;
+  margin: 0;
+  gap: 1.5rem; 
+}
+
+/* --- General Link Styling --- */
+.navbar a {
+  color: #e5e5e5; 
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+/* .navbar a:hover {
+  color: #f5c518; 
+} */
+
+/* --- Center Search Bar --- */
+.navbar-search {
+  display: flex;
+  align-items: center;
+  background-color: #FFFF;
+  border: none;
+  border-radius: 25px;
+  overflow: hidden; /* Keeps button and input contained */
+}
+
+.navbar-search input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0.5rem 0.8rem;
+  color: black;
+  font-size: 0.9rem;
+}
+
+.navbar-search input::placeholder {
+  color: #888;
+}
+
+.navbar-search button {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-search button:hover {
+  color: black;
+}
+
+/* --- Right-side Icons & Button --- */
+.icon {
+  color: #e5e5e5;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* .icon:hover {
+  color: #f5c518;
+} */
+
+
+.signup-btn {
+  background-color: #FF0000;
+  color: white; 
+  padding: 0.4rem 1rem; 
+  border-radius: 12px;
+  font-weight: 600; 
+  border: none;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+  cursor: pointer;
+}
+
+.signup-btn:hover {
+  background-color: #e60000;
+}
+
+#chatbot-icon{
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#selected-circle{
+  width: 6px;
+  height: 6px;
+  background-color: #FF0000;
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.option{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Show circle on hover with 0.4 opacity */
+.option:hover #selected-circle{
+  opacity: 0.7;
+}
+
+/* Show circle permanently with full opacity when selected */
+.option.active #selected-circle{
+  opacity: 1;
+}
