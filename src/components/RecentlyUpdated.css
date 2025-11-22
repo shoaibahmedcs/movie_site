@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  background-color: #000;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* Container */
+.recent-container {
+  width: 100%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.recent-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Wrapper */
+.recent-wrapper {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Cards container */
+.recent-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.recent-cards::-webkit-scrollbar {
+  display: none;
+}
+
+/* Single card */
+.movie-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: #111;
+  padding: 10px;
+  border-radius: 8px;
+  min-width: 290px;
+  max-width: 290px;
+  height: 160px;
+  gap: 15px;
+  box-sizing: border-box;
+}
+
+/* Poster */
+.movie-img {
+  width: 90px;
+  height: 135px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Movie details on right */
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  flex: 1;
+}
+
+/* Name, Rating, Date */
+.movie-name {
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 2px;
+  text-transform: capitalize;
+}
+
+.movie-rating {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.movie-date {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Arrow buttons */
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  background: rgba(45, 45, 45, 0.9);
+  color: white;
+  transition: 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-btn-left {
+  left: 10px;
+}
+
+.arrow-btn-right {
+  right: 10px;
+}
+
+.arrow-btn:hover {
+  background: rgba(68, 68, 68, 0.95);
+  transform: translateY(-50%) scale(1.05);
+}
