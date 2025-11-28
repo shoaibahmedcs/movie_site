@@ -59,7 +59,7 @@ export default function RecentlyUpdated() {
       <div className="recent-wrapper">
         <div className="recent-cards" ref={scrollContainerRef}>
           {movies.map((movie) => (
-            <div className="movie-card" key={movie.id}>
+            <div className="movie-card-recently" key={movie.id}>
               <img
                 src={`${IMG_BASE_URL}${movie.poster_path}`}
                 alt={movie.title}

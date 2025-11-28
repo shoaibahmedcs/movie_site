@@ -1,0 +1,94 @@
+.mmc_container {
+  width: 100%;
+  background: #111;
+  color: white;
+  padding: 10px 0; /* small top & bottom padding */
+  margin: 5px 0;   /* tiny top & bottom margin */
+}
+
+.mmc_header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+.mmc_title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.mmc_view_all {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.mmc_content {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.mmc_arrow {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  padding: 0 10px;
+}
+
+.mmc_arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.mmc_movies_wrapper {
+  display: flex;
+  gap: 12px; /* small gap between cards */
+  overflow: hidden;
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* Stretch all cards equally to use the full width */
+.mmc_card {
+  flex: 1;           /* stretch evenly */
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;      /* prevents overflow due to flex items */
+}
+
+.mmc_card:hover {
+  transform: translateY(-4px);
+}
+
+.mmc_poster {
+  width: 100%;
+  height: 220px;
+  object-fit: fill;
+}
+
+.mmc_info {
+  padding: 5px;
+  text-align: start;
+  text-transform: capitalize;
+}
+
+.mmc_name {
+  font-size: 14px;
+  margin: 2px 0;
+  font-weight: bold;
+  color: #fff;
+}
+
+.mmc_rating,
+.mmc_date {
+  font-size: 12px;
+  margin: 1px 0;
+  color: #ccc;
+}

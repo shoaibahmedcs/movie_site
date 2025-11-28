@@ -10,6 +10,7 @@ body {
   width: 100%;
   padding: 20px 40px;
   box-sizing: border-box;
+  overflow-y: visible;
 }
 
 .recent-title {
@@ -22,7 +23,7 @@ body {
 .recent-wrapper {
   position: relative;
   width: 100%;
-  overflow-x: hidden;
+  overflow: visible;
 }
 
 /* Cards container */
@@ -31,6 +32,7 @@ body {
   gap: 20px;
   flex-wrap: nowrap;
   overflow-x: auto;
+  overflow-y: visible;
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
@@ -42,18 +44,19 @@ body {
 }
 
 /* Single card */
-.movie-card {
+.movie-card-recently {
   display: flex;
-  flex-direction: row;
+  flex-direction: row !important;
   align-items: flex-start;
   background: #111;
   padding: 10px;
   border-radius: 8px;
-  min-width: 290px;
-  max-width: 290px;
-  height: 160px;
-  gap: 15px;
+  gap: 12px;
   box-sizing: border-box;
+  height: fit-content;
+  flex-shrink: 0;
+  min-width: 280px;
+  max-width: 280px;
 }
 
 /* Poster */
@@ -69,27 +72,33 @@ body {
 .movie-details {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  flex: 1;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-shrink: 1;
+  white-space: normal;
+  min-width: 0;
 }
 
 /* Name, Rating, Date */
 .movie-name {
   font-size: 14px;
   font-weight: 800;
-  margin-bottom: 2px;
+  margin: 0;
   text-transform: capitalize;
+  word-wrap: break-word;
+  max-width: 150px;
 }
 
 .movie-rating {
   font-size: 14px;
   opacity: 0.9;
+  margin: 0;
 }
 
 .movie-date {
   font-size: 12px;
   opacity: 0.7;
+  margin: 0;
 }
 
 /* Arrow buttons */
