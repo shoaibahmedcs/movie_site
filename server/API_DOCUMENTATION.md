@@ -100,17 +100,97 @@ Authorization: Bearer YOUR_JWT_TOKEN
 **Success Response (200):**
 ```json
 {
-  "_id": "673456789abcdef123456789",
+  "id": "673456789abcdef123456789",
   "name": "John Doe",
   "email": "john@example.com",
-  "createdAt": "2025-11-23T10:30:00.000Z"
+  "createdAt": "2024-11-13T10:30:00.000Z"
 }
 ```
 
 **Error Response (401):**
 ```json
 {
-  "message": "Access token required"
+  "message": "Unauthorized"
+}
+```
+
+---
+
+### 4. Forgot Password
+Request a password reset code.
+
+**Endpoint:** `POST /api/auth/forgot-password`
+
+**Headers:**
+```
+Content-Type: application/json
+```
+
+**Request Body:**
+```json
+{
+  "email": "john@example.com"
+}
+```
+
+**Success Response (200):**
+```json
+{
+  "message": "Reset code generated",
+  "resetToken": "123456",
+  "email": "john@example.com",
+  "expiresIn": "15 minutes"
+}
+```
+
+**Note:** In production, `resetToken` should be sent via email, not in the response.
+
+**Error Response (404):**
+```json
+{
+  "message": "User not found"
+}
+```
+
+---
+
+### 5. Reset Password
+Reset password using the reset token.
+
+**Endpoint:** `POST /api/auth/reset-password`
+
+**Headers:**
+```
+Content-Type: application/json
+```
+
+**Request Body:**
+```json
+{
+  "email": "john@example.com",
+  "resetToken": "123456",
+  "newPassword": "newpassword123"
+}
+```
+
+**Success Response (200):**
+```json
+{
+  "message": "Password reset successful"
+}
+```
+
+**Error Response (400):**
+```json
+{
+  "message": "Invalid reset token"
+}
+```
+
+**Error Response (400):**
+```json
+{
+  "message": "Reset token has expired"
 }
 ```
 

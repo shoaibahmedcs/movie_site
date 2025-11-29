@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import AuthForm from './AuthForm.jsx';
-import AuthService from '../Services/authService.js';
+import AuthService from '../services/authService.js';
 import { validatePassword, validateConfirm } from '../utils/validators.js';
 
 function useQuery() {
