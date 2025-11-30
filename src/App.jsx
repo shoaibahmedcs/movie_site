@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Signup from "./components/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
+import GenrePage from "./pages/GenrePage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/genre/:genre" element={<GenrePage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />

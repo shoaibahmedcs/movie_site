@@ -80,7 +80,8 @@ export default function Navbar() {
   const handleGenreSelect = (genre) => {
     console.log('Selected genre:', genre);
     setIsGenreOpen(false);
-    // Add your genre filtering logic here
+    // Navigate to genre page
+    navigate(`/genre/${genre.toLowerCase()}`);
   };
 
   const handleLanguageSelect = (language) => {
