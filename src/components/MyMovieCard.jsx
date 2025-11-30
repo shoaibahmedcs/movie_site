@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import moviesData from "../data/movies.json";
 import "./MyMovieCard.css";
 
 export default function MyMovieCard({ which_genre }) {
+  const navigate = useNavigate();
   const [selectedGenre, setSelectedGenre] = useState("");
   const [movies, setMovies] = useState([]);
   const [index, setIndex] = useState(0);
@@ -68,11 +70,17 @@ export default function MyMovieCard({ which_genre }) {
 
   const currentMovies = movies.slice(index, index + MOVIES_PER_SLIDE);
 
+  const handleViewAll = () => {
+    // Convert genre name to lowercase for URL
+    const genreUrl = selectedGenre.toLowerCase().replace(/\s+/g, '-');
+    navigate(`/genre/${genreUrl}`);
+  };
+
   return (
     <div className="mmc_container">
       <div className="mmc_header">
         <h2 className="mmc_title">{selectedGenre} - Movies</h2>
-        <span className="mmc_view_all">View All →</span>
+        <span className="mmc_view_all" onClick={handleViewAll} style={{ cursor: 'pointer' }}>View All →</span>
       </div>
 
       <div className="mmc_content">

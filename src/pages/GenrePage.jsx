@@ -9,8 +9,17 @@ export default function GenrePage() {
 
   // Format genre for display - handle special cases like "sci-fi"
   const formatGenreName = (genreParam) => {
-    if (genreParam === 'sci-fi') return 'Sci-Fi';
-    return genreParam.charAt(0).toUpperCase() + genreParam.slice(1);
+    if (!genreParam) return '';
+    
+    // Handle special cases
+    if (genreParam === 'sci-fi' || genreParam === 'scifi') return 'Sci-Fi';
+    if (genreParam === 'science-fiction') return 'Sci-Fi';
+    
+    // Capitalize first letter of each word
+    return genreParam
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
   };
 
   const displayGenre = formatGenreName(genre);
